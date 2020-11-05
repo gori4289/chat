@@ -20,7 +20,7 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       }.not_to change { Message.count }
 
       # 元のページに戻ってくることを確認する
-      expect(current_path).to eq room_messages_path(@room_user.room)
+      expect(current_path).to eq  room_messages_path(@room_user.room)
     end
   end
 
@@ -47,10 +47,6 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       # 送信した値がブラウザに表示されていることを確認する
       expect(page).to have_content(post)
     end
-  end
-  context '投稿に成功したとき' do
-
-    # 中略
 
     it '画像の投稿に成功すると、投稿一覧に遷移して、投稿した画像が表示されている' do
       # サインインする
@@ -76,20 +72,19 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       # 送信した画像がブラウザに表示されていることを確認する
       expect(page).to have_selector("img")
     end
-  end
 
-  it 'テキストと画像の投稿に成功すること' do
-    # サインインする
-    sign_in(@room_user.user)
+    it 'テキストと画像の投稿に成功すること' do
+      # サインインする
+      sign_in(@room_user.user)
 
-    # 作成されたチャットルームへ遷移する
-    click_on(@room_user.room.name)
+      # 作成されたチャットルームへ遷移する
+      click_on(@room_user.room.name)
 
-    # 添付する画像を定義する
-    image_path = Rails.root.join('public/images/test_image.png')
+      # 添付する画像を定義する
+      image_path = Rails.root.join('public/images/test_image.png')
 
-    # 画像選択フォームに画像を添付する
-    attach_file('message[image]', image_path, make_visible: true)
+      # 画像選択フォームに画像を添付する
+      attach_file('message[image]', image_path, make_visible: true)
 
       # 値をテキストフォームに入力する
       post = "テスト"
@@ -106,6 +101,5 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       # 送信した画像がブラウザに表示されていることを確認する
       expect(page).to have_selector("img")
     end
-end  
-
-
+  end
+end
