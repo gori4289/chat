@@ -3,16 +3,12 @@ require 'rails_helper'
 RSpec.describe "ユーザーログイン機能", type: :system do
   it 'ログインしていない状態でトップページにアクセスした場合、サインインページに移動する' do
     # トップページに遷移する
-<<<<<<< HEAD
 
-=======
     visit root_path
->>>>>>> parent of fb4e043... 結合テストの実装
     # ログインしていない場合、サインインページに遷移していることを確認する
 
   end
 
-<<<<<<< HEAD
   it 'ログインに成功し、トップページに遷移する' do
     # 予め、ユーザーをDBに保存する
 
@@ -30,7 +26,6 @@ RSpec.describe "ユーザーログイン機能", type: :system do
 
   it 'ログインに失敗し、再びサインインページに戻ってくる' do
     # 予め、ユーザーをDBに保存する
-=======
 
  it 'ログインに成功し、トップページに遷移する' do
   # 予め、ユーザーをDBに保存する
@@ -55,7 +50,6 @@ RSpec.describe "ユーザーログイン機能", type: :system do
 
   it 'ログインに失敗し、再びサインインページに戻ってくる' do
     @user = FactoryBot.create(:user)
->>>>>>> parent of fb4e043... 結合テストの実装
 
     # トップページに遷移する
 

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 require 'rails_helper'
 
 RSpec.describe "メッセージ投稿機能", type: :system do
@@ -111,4 +109,3 @@ RSpec.describe "メッセージ投稿機能", type: :system do
 end  
 
 
->>>>>>> parent of fb4e043... 結合テストの実装
